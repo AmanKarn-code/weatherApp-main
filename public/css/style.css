@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h2 {
+    color: red;
+}
+
+/* navbar */
+.navbar {
+    background-color: #564d5e;
+    color: bisque;
+    padding: 14px;
+}
+
+.navbar a {
+    color: bisque;
+    font-size: 1.3rem;
+}
+
+.navbar a:hover {
+    color: #cdefef;
+}
+
+.main_menu {
+    background-color: #564d5e;
+}
+
+.navbar-toggler {
+    background-color: burlywood;
+}
+
+.nIcon {
+    transition: all linear ease;
+    animation: zoom 2s linear infinite;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* main content */
+.main_header_left {
+    height: 49rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Lobster Two', cursive;
+}
+
+.main_header_left p {
+    font-size: 2rem;
+}
+
+.main_header_left h1 {
+    font-size: 4rem;
+}
+
+.sp-1 {
+    font-weight: bold;
+    color: rgb(255 130 216);
+}
+.sp-2{
+    font-weight: bold;
+    color: rgb(238, 29, 57);
+}
+.sp-3 {
+    font-weight: bold;
+    color: rgb(71, 189, 16);
+
+}
+
+.main_header_left a button {
+    font-size: 2rem;
+    border: 1px solid #e55500;
+    margin-top: 5rem;
+    border-radius: 5px;
+    outline: none;
+}
+
+.main_header_left a button:hover {
+    background-color: #e55500 !important;
+    color: antiquewhite !important;
+}
+.main_header_right figure img{
+    filter: drop-shadow(0 0.5rem 1rem blue);
+}
+.main_header_right {
+    height: 53rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* footer */
+footer {
+    background-color: #564d5e;
+    color: bisque;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.5rem;
+}
+footer span{
+    color:#e55500;
+    font-weight: bold;
+}
+
+/* responsive codes */
+@media(max-width:1200px) {
+    .main_header_left p {
+        font-size: 1.6rem;
+    }
+    
+    .main_header_left h1 {
+        font-size: 2.8rem;
+    }
+    .main_header_left{
+        height: auto;
+        margin-top:1rem;
+    }
+    .main_header_right{
+        height: auto;
+        margin-top:1rem;
+    }
+}
+
+@media(max-width:768px){
+    .main_header_left{
+        height: auto;
+        margin-top:1rem;
+    }
+    .main_header_right{
+        height: auto;
+        margin-top:1rem;
+    }
+    .main_header_left a button {
+        margin-top: 0rem;
+    }
+    .main_header_right img{
+        width: 40rem !important;
+    }
+}
+/* weather page */
+        .search {
+            width: 50vw;
+            margin: 2rem auto;
+        }
+
+        .searchForm {
+            position: relative;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .tempInfo {
+            width: fit-content;
+            margin: auto;
+            margin-top: 1rem;
+            background-color: #303340;
+            color: aliceblue;
+            border: 1px solid rgb(39, 39, 39);
+            border-radius: 10px;
+            height: 15rem;
+        }
+
+        .firstLayer {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #292c39;
+            height: 4rem;
+            width: 20rem;
+            border-radius: 10px;
+        }
+        .firstLayer p{
+            font-size: 14px;
+            margin-top: 9px;
+        }
+
+        .secondLayer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #303340;
+            height: 8rem;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        .secondLayer p{
+            margin:1rem;
+            display: inline-block;
+        }
+        #cityName {
+            height: 4rem;
+            width: 20rem;
+            font-size: 16px;
+            padding: 2px 5px;
+            outline: none;
+            color: rgb(31, 32, 32);
+            font-weight: 600;
+            border: 1px solid #7c7c7c;
+            border-radius: 10px;
+            
+        }
+        ::placeholder{
+            font-size: 14px;
+            color: rgb(67, 104, 102);
+        }
+        #searchbtn {
+            position: absolute;
+            right: 3px;
+            height: 3rem;
+            top: 4px;
+            width: 3rem;
+            background: transparent;
+            outline: none;
+            border-radius: 53%;
+            border: 1px solid rgb(17, 166, 172);
+        }
+        #searchbtn:hover{
+            background-color: rgb(17, 166, 172);
+            color: antiquewhite;
+        }
+        .hide{
+            visibility: hidden;
+            transition: all 0.3s linear;
+        }
+        #searchStatus {
+    position: absolute;
+    margin: 5px 20px;
+    font-size: 11px;
+    font-family: cursive;
+    color: bisque;
+}
