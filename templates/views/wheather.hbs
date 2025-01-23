@@ -3,59 +3,98 @@
 
 <head>
     {{>headLink}}
-    
-
 </head>
 
 <body>
-    <!-- navbar section -->
+    <!-- Navbar Section -->
     {{>navbar}}
 
-    <!-- main content section -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="cd-md-10 col-12 mx-auto">
-                <div class="search">
-                    <form class="searchForm">
-                        <input type="text" id="cityName" placeholder="enter the city name">
-                        <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
-                    </form>
-                    <div class="tempInfo">
-                        <div class="firstLayer">
-                            <p id="day"></p>
-                            <p id="date"></p>
-                        </div>
-                            <p id="searchStatus"></p>
-                        <div class="secondLayer">
-                            <div class="hide" id="hide">
-                            <p><span id="temp"></span> &deg; C</p>
-                            <p id="tempStatus"><i class="fa fa-cloud"></i></p>
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+                    <div class="search">
+                        <!-- Search Form -->
+                        <form class="searchForm">
+                            <input type="text" id="cityName" placeholder="Enter the city name">
+                            <button type="submit" id="searchbtn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+
+                        <!-- Weather Information -->
+                        <div class="tempInfo">
+                            <!-- Day, Status, and Date -->
+                            <div class="firstLayer">
+                                <p id="day" class="para"></p>
+                                <p id="searchStatus"></p>
+                                <p id="date" class="para2"></p>
+                            </div>
+
+                            <!-- Weather Details -->
+                            <div class="secondLayer">
+                                <div class="hide vis" id="hide">
+                                    <!-- Temperature and Status -->
+                                    <div class="center">
+                                        <p><span id="temp"></span></p>
+                                        <p id="tempStatus">
+                                            <i class="fa fa-cloud"></i>
+                                        </p>
+                                    </div>
+
+                                    <!-- Max & Min Temperatures -->
+                                    <div class="flex">
+                                        <p>Max: <span id="maxTemp"></span></p>
+                                        <p>Min: <span id="minTemp"></span></p>
+                                    </div>
+
+                                    <!-- Humidity and Sea Level -->
+                                    <div class="flex">
+                                        <p>Humidity: <span id="humid"></span></p>
+                                        <p>Sea Level: <span id="seaLevel"></span></p>
+                                    </div>
+
+                                    <!-- Pressure and Wind Speed -->
+                                    <div class="flex">
+                                        <p>Pressure: <span id="pressure"></span></p>
+                                        <p>Wind Speed: <span id="wind"></span></p>
+                                    </div>
+
+                                    <!-- Sunrise and Sunset -->
+                                    <div class="flex">
+                                        <p>Sunrise: <span id="sunRise"></span></p>
+                                        <p>Sunset: <span id="sunSet"></span></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- End of Weather Information -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- footer section -->
+    <!-- Footer Section -->
     {{>footer}}
+
+    <!-- JavaScript Section -->
     <script src="./js/main.js"></script>
     <script>
-       const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        // Get current day
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const d = new Date();
+        const day = weekday[d.getDay()];
+        document.getElementById("day").innerText = day;
 
-const d = new Date();
-let day = weekday[d.getDay()];
-document.getElementById("day").innerHTML = day;
-
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-let month=monthNames[d.getMonth()];
-let date=d.getDate();
-document.getElementById("date").innerHTML=date+" "+month;
-
-
+        // Get current date and month
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        const month = monthNames[d.getMonth()];
+        const date = d.getDate();
+        document.getElementById("date").innerText = `${date} ${month}`;
     </script>
 </body>
 
