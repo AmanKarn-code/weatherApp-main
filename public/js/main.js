@@ -37,8 +37,9 @@ const getInfo = async (event) => {
     searchStatus.innerHTML = "Please enter a valid city.";
   } else {
     try {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=59373e6d80a2123494ade7c0f0bbfd15`;
-      const response = await fetch(url);
+      let url =  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+      const apiKey="59373e6d80a2123494ade7c0f0bbfd15";
+      const response = await fetch(url+cityVal+`&appid=${apiKey}`);
       const data = await response.json();
       const arrData = [data];
 
